@@ -78,7 +78,18 @@ filebeat.inputs:
   fields:
           module: gitlab
           client: maggie
+- type: log
 
+  # Change to true to enable this input configuration.
+  enabled: true
+
+  # Paths that should be crawled and fetched. Glob based paths.
+  paths:
+    - /var/log/pcap.log
+    #- c:\programdata\elasticsearch\logs\*
+  fields:
+          module: pcap
+          client: maggie
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
   # matching any regular expression from the list.
   #exclude_lines: ['^DBG']
